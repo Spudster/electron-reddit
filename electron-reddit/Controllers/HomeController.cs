@@ -1,9 +1,11 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using ElectronNET.API;
 using electron_reddit.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using reddit_dot_net;
 
 namespace electron_reddit.Controllers
 {
@@ -21,8 +23,10 @@ namespace electron_reddit.Controllers
 
             Electron.IpcMain.On("getData", (args) =>
             {
+                var subReddits = new List<string> { "earthporn", "oldschoolcool", "astrophotography", "spaceporn" };
+                var posts = new SubRedditPictures().GetTopPicturesStrings(subReddits);
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
-                Electron.IpcMain.Send(mainWindow, "sendData", "Hello IPC World!");
+                Electron.IpcMain.Send(mainWindow, "sendData", posts);
             });
 
             return View();

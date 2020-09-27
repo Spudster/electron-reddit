@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using reddit_dot_net;
 
 namespace electron_reddit
 {
@@ -52,6 +53,7 @@ namespace electron_reddit
             });
 
             Task.Run(async () => await Electron.WindowManager.CreateWindowAsync());
+            RedditDotNetClient.InitializeRedditClient();
         }
 
     }
