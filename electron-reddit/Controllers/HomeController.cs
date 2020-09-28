@@ -20,11 +20,9 @@ namespace electron_reddit.Controllers
 
         public IActionResult Index()
         {
-
             Electron.IpcMain.On("getData", (args) =>
             {
-                var subReddits = new List<string> { "earthporn", "oldschoolcool", "astrophotography", "spaceporn" };
-                var posts = new SubRedditPictures().GetTopPicturesStrings(subReddits);
+                var posts = new SubRedditPictures().GetTopPictures(new List<string>{"foodporn"});
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
                 Electron.IpcMain.Send(mainWindow, "sendData", posts);
             });

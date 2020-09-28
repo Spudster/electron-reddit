@@ -11,7 +11,9 @@ namespace reddit_dot_net
         {
             RedditDotNetClient.InitializeRedditClient();
             var reddit = RedditDotNetClient.Instance;
-            var results = reddit.SearchRedditNames("", false, true, false);
+            var results = reddit.SearchRedditNames("dadjokes", false, false, false);
+
+            
 
             //var sr = new SubReddit().Recommended("oldschoolcool");
 

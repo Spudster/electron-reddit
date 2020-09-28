@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "UVUtuW9iLau0qrUuiV1KmQ9ICkOXurOHqvdahLQ/u1I3vnEqKJyofW/9GpgZWVUEQSjWktB5HGOPPX9ltMgVog==",
+  "dgSpecHash": "1Q9VDYL4qAfiOsRTWGSYX0IgXoI63jQs9EXsBznDnG/ub0Ze7G8kiYL+y6hmNVt5nHTDWkmlcC+oMBtFUN+x1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\i3138\\source\\repos\\electron-reddit\\reddit-dot-net\\reddit-dot-net.csproj",
+  "projectFilePath": "C:\\Users\\Carlos\\Source\\Repos\\electron-reddit\\reddit-dot-net\\reddit-dot-net.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\i3138\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\reddit\\1.4.0\\reddit.1.4.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\reddit.authtokenretrieverlib\\1.4.0\\reddit.authtokenretrieverlib.1.4.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\restsharp\\106.6.9\\restsharp.106.6.9.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\i3138\\.nuget\\packages\\uhttpsharp\\0.1.6.22\\uhttpsharp.0.1.6.22.nupkg.sha512"
+    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\reddit\\1.4.0\\reddit.1.4.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\reddit.authtokenretrieverlib\\1.4.0\\reddit.authtokenretrieverlib.1.4.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\restsharp\\106.6.9\\restsharp.106.6.9.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\uhttpsharp\\0.1.6.22\\uhttpsharp.0.1.6.22.nupkg.sha512"
   ],
   "logs": [
     {

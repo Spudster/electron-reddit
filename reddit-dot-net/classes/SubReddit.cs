@@ -9,7 +9,6 @@ namespace reddit_dot_net
     {
         public IEnumerable<SubredditRecommendations> Recommended(string sub)
         {
-            //var user = Authorize(appId); //user needs to allow
             var reddit = RedditDotNetClient.Instance;
             var recommended = reddit.Models.Subreddits.Recommended(sub, new SubredditsRecommendInput());
             return recommended;
