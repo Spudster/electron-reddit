@@ -1,5 +1,4 @@
 using ElectronNET.API;
-using electron_reddit;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 

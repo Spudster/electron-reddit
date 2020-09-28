@@ -27,15 +27,26 @@
             console.log(posts);
 
             for (var i = 0; i < posts.length; i++) {
-
+                //camelcase
                 var p = posts[i];
-                var generatedHtml = "<img src="+ p + " class='img-fluid' alt='Responsive image'></br>";
+                var generatedHtml = "<div>" +
+                    "<img src=" + p.url + " class='img-fluid' alt=" + p.title +"><div>";
+                var restOfHtml = "<div class='container'>" +
+                    "<div>Title: " + p.title + "</div>" +
+                    "<div>Author: " + p.author + "</div>" +
+                    "<div>Subreddit: " + p.subreddit + "</div>" +
+                    "<div>Upvotes: " + p.upvotes + "</div>" +
+                    "<div>DownVotes: " + p.downVotes + "</div>" +
+                    "<div>Score: " + p.score +"</div>" +
+                    "</div>";
+
+                generatedHtml += restOfHtml;
                 document.getElementById("header").innerHTML += generatedHtml;
 
             };
         });
 
-     
+
     }());
 </script>
 

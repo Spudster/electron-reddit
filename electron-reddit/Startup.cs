@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ElectronNET.API;
-using ElectronNET.API.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using reddit_dot_net;
+using System.Threading.Tasks;
+using ElectronNET.API.Entities;
 
 namespace electron_reddit
 {
@@ -52,9 +49,58 @@ namespace electron_reddit
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            Task.Run(async () => await Electron.WindowManager.CreateWindowAsync());
+            InitializeElectronWindow();
+
+            //todo remove this when log in is implemented
             RedditDotNetClient.InitializeRedditClient();
         }
 
+        public async void InitializeElectronWindow()
+        {
+            var options = new BrowserWindowOptions()
+            {
+                Show = false
+            };
+            
+            var mainWindow = await Electron.WindowManager.CreateWindowAsync(options);
+            mainWindow.OnReadyToShow += () =>
+            {
+                mainWindow.Show();
+            };
+
+            //CreateElectronMenu();
+        }
+
+        private static void CreateElectronMenu()
+        {
+            var menu = new MenuItem[]
+            {
+                new MenuItem
+                {
+                    Label = "File",
+                    Submenu = new MenuItem[]
+                    {
+                        new MenuItem
+                        {
+                            Label = "Exit",
+                            Click = () => { Electron.App.Exit(); }
+                        }
+                    }
+                },
+
+                new MenuItem
+                {
+                    Label = "Info",
+                    Click = async () =>
+                    {
+                        await Electron.Dialog.ShowMessageBoxAsync("I Love Electron.Net");
+                    }
+                }
+
+
+            };
+
+            Electron.Menu.SetApplicationMenu(menu);
+        }
     }
 }

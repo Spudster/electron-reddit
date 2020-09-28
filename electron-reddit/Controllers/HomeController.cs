@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using ElectronNET.API;
 using electron_reddit.Models;
+using ElectronNET.API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using reddit_dot_net;
+using System.Diagnostics;
+using System.Linq;
 
 namespace electron_reddit.Controllers
 {
@@ -22,7 +22,7 @@ namespace electron_reddit.Controllers
         {
             Electron.IpcMain.On("getData", (args) =>
             {
-                var posts = new SubRedditPictures().GetTopPictures(new List<string>{"foodporn"});
+                var posts = new Pictureizer().GetTopPictures(new List<string>{"foodporn"},"month", 20);
                 var mainWindow = Electron.WindowManager.BrowserWindows.First();
                 Electron.IpcMain.Send(mainWindow, "sendData", posts);
             });

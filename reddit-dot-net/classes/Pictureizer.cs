@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using Reddit;
 using Reddit.Controllers;
 using Reddit.Inputs;
+using reddit_dot_net.models;
 using reddit_dot_net.utility;
 
 namespace reddit_dot_net
 {
-    public class SubRedditPictures
+    public class Pictureizer
     {
         private List<string> _pictureExtensions = new List<string>{".jpg", ".png"};
 
-        public List<Post> GetTopPictures(List<string> subReddits, string dateInterval = "day",int topMany = 10)
+        public List<SimplifiedPost> GetTopPictures(List<string> subReddits, string dateInterval = "day",int topMany = 10)
         {
-            var reddit = new RedditClient(Credentials.AppId, Credentials.RefreshToken);
+            var reddit = RedditDotNetClient.Instance;
             var today = DateTime.Today;
-            var postResults = new List<Post>();
+            var postResults = new List<SimplifiedPost>();
 
             foreach (var sub in subReddits)
             {
@@ -25,9 +25,9 @@ namespace reddit_dot_net
 
                 foreach (var post in posts)
                 {
-                    if (post.Created >= today && post.Created < today.AddDays(1))
+                    if (post.Listing.URL.Contains(".jpg") || post.Listing.URL.Contains(".png"))
                     {
-                        postResults.Add(post);
+                        postResults.Add(Utility.SimplifyPost(post));
                     }
                 }
             }
@@ -36,17 +36,16 @@ namespace reddit_dot_net
             return postResults;
         }
 
-        public List<string> GetTopPicturesStrings(string query, string dateInterval = "day", int topMany = 10)
+        public List<string> GetTopPicturesStrings( string dateInterval = "day", int topMany = 10)
         {
             var reddit = RedditDotNetClient.Instance;
-            var today = DateTime.Today;
             var postResults = new List<string>();
 
-            var subReddits = reddit.SearchRedditNames(query, false, true, false);
+            var subReddits = reddit.SearchRedditNames("foodporn", false, true, false);
+  
 
             foreach (var sub in subReddits)
             {
-
                 var subReddit = reddit.Subreddit(sub);
                 var posts = subReddit.Posts.GetTop(new TimedCatSrListingInput(t: dateInterval, limit: topMany));
                 if (posts.Count <= 0) return postResults;

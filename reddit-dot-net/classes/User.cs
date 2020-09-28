@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Reddit.AuthTokenRetriever;
+using System;
 using System.Diagnostics;
-using Reddit.AuthTokenRetriever;
 
 namespace reddit_dot_net
 {
     public class User
     {
-        public  string Authorize(string appId, string appSecret = null, int port = 8080)
+        public string Authorize(string appId, string appSecret = null, int port = 8080)
         {
             // Create a new instance of the auth token retrieval library.  --Kris
             AuthTokenRetrieverLib authTokenRetrieverLib = new AuthTokenRetrieverLib(appId, appSecret, port);

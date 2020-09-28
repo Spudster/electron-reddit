@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 
 
 namespace reddit_dot_net
@@ -11,31 +11,29 @@ namespace reddit_dot_net
         {
             RedditDotNetClient.InitializeRedditClient();
             var reddit = RedditDotNetClient.Instance;
-            var results = reddit.SearchRedditNames("dadjokes", false, false, false);
+            //var results = reddit.SearchRedditNames("dadjokes", false, false, false);
+
+            // var posts = new Jokster().GetTopPosts(new List<string> {"dadjokes"}, "year", 100);
+
+            var posts = new Pictureizer().GetTopPictures(new List<string> { "foodporn" }, "month", 20);
 
             
 
-            //var sr = new SubReddit().Recommended("oldschoolcool");
+            foreach (var post in posts)
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(post, Formatting.Indented));
 
-            //var subReddits = new List<string> {"earthporn", "oldschoolcool", "astrophotography", "spaceporn" };
-            //var posts = new SubRedditPictures().GetTopPictures(subReddits);
+                Console.WriteLine($"Title: {post.Title}");
+                Console.WriteLine($"Self Text: {post.Listing.SelfText}");
+                Console.WriteLine($"URI: {post.Url}");
+                Console.WriteLine($"Author: {post.Author}");
+                Console.WriteLine($"Upvotes: {post.Upvotes}");
+                Console.WriteLine($"Subreddit: {post.Subreddit}");
+                Console.WriteLine($"-----------------------");
+                Console.WriteLine();
+            }
 
-
-
-            //Console.WriteLine($"Post #: {posts.Count}");
-            //foreach (var post in posts)
-            //{
-            //    Console.WriteLine($"Title: {post.Listing.Title}");
-            //    Console.WriteLine($"URI: {post.Listing.URL}");
-            //    Console.WriteLine($"Author: {post.Listing.Author}");
-            //    Console.WriteLine($"Upvotes: {post.UpVotes}");
-            //    Console.WriteLine($"Subreddit: {post.Subreddit}");
-
-            //    Console.WriteLine($"-----------------------");
-            //    Console.WriteLine();
-            //}
-
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 

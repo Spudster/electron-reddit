@@ -28,7 +28,6 @@ C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\bin\Debug\netcoreapp
 C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\bin\Debug\netcoreapp3.1\AuthTokenRetrieverLib.dll
 C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\bin\Debug\netcoreapp3.1\RestSharp.dll
 C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\bin\Debug\netcoreapp3.1\uhttpsharp.dll
-C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\obj\Debug\netcoreapp3.1\reddit-dot-net.csprojAssemblyReference.cache
 C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\obj\Debug\netcoreapp3.1\reddit-dot-net.AssemblyInfoInputs.cache
 C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\obj\Debug\netcoreapp3.1\reddit-dot-net.AssemblyInfo.cs
 C:\Users\Carlos\Source\Repos\electron-reddit\reddit-dot-net\obj\Debug\netcoreapp3.1\reddit-dot-net.csproj.CoreCompileInputs.cache
