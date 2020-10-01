@@ -1,0 +1,77 @@
+﻿<template class="task-template">
+
+    <div id="about-modal" class="about modal">
+        <div class="about-wrapper">
+
+            <main class="about-sections">
+                <section class="about-section play-along">
+                    <h2>Play Along</h2>
+
+                </section>
+
+                <h3 id="header"></h3>
+                <button id="cmdShowData">Show Data</button>
+
+            </main>
+        </div>
+    </div>
+
+
+    <script>
+        (function() {
+
+            const { ipcRenderer } = require("electron");
+
+            document.getElementById("cmdShowData").addEventListener("click",
+                () => {
+                    ipcRenderer.send("getData", 'args');
+                });
+
+
+            ipcRenderer.on('sendData',
+                (event, msg) => {
+                    document.getElementById("header").innerHTML = "";
+                    var posts = msg;
+
+                    console.log(posts);
+
+                    for (var i = 0; i < posts.length; i++) {
+                        //camelcase
+                        var p = posts[i];
+                        var generatedHtml = "<div>" +
+                            "<img src=" +
+                            p.url +
+                            " class='img-fluid' alt=" +
+                            p.title +
+                            "><div>";
+                        var restOfHtml = "<div class='container'>" +
+                            "<div>Title: " +
+                            p.title +
+                            "</div>" +
+                            "<div>Author: " +
+                            p.author +
+                            "</div>" +
+                            "<div>Subreddit: " +
+                            p.subreddit +
+                            "</div>" +
+                            "<div>Upvotes: " +
+                            p.upvotes +
+                            "</div>" +
+                            "<div>DownVotes: " +
+                            p.downVotes +
+                            "</div>" +
+                            "<div>Score: " +
+                            p.score +
+                            "</div>" +
+                            "</div>";
+
+                        generatedHtml += restOfHtml;
+                        document.getElementById("header").innerHTML += generatedHtml;
+
+                    };
+                });
+
+
+        }());
+    </script>
+</template>
